@@ -49,7 +49,8 @@ class CustomButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final Widget? icon;
 
-  CustomButton({
+  const CustomButton({
+    super.key,
     required this.text,
     required this.onPressed,
     this.backgroundColor = const Color(AppColors.backgroundColor),
@@ -80,10 +81,7 @@ class CustomButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             //This helps to align the icon and text inside the button properly
-            if (icon != null) ...[
-              icon!,
-              SizedBox(width: 22.0),
-            ],
+            if (icon != null) ...[icon!, SizedBox(width: 22.0)],
             Text(
               text,
               style: GoogleFonts.workSans(
