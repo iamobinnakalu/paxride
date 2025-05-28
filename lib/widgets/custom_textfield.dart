@@ -11,7 +11,8 @@ class CustomTextfield extends StatelessWidget {
   final FocusNode? focusNode;
   final Widget? icon;
 
-  CustomTextfield({
+  const CustomTextfield({
+    super.key,
     required this.hintText,
     this.controller,
     this.obscureText = false,
@@ -24,22 +25,24 @@ class CustomTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Color(AppColors.textColor1),
-        hintText: hintText,
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-        suffixIcon: suffixIcon != null
-            ? IconButton(
-                icon: Icon(suffixIcon),
-                onPressed: () => onSuffixIconPressed?.call(),
-              )
-            : null,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width,
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Color(AppColors.textColor1),
+          hintText: hintText,
+          prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+          suffixIcon:
+              suffixIcon != null
+                  ? IconButton(
+                    icon: Icon(suffixIcon),
+                    onPressed: () => onSuffixIconPressed?.call(),
+                  )
+                  : null,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
         ),
       ),
     );

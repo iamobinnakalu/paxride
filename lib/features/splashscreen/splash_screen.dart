@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:paxride/common/widgets/bg_container.dart';
 import '../../constants/colors.dart';
 import '../onboarding/onboarding_screen.dart';
 
@@ -11,7 +12,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> opacity;
   bool slideIn = true;
@@ -22,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     controller = AnimationController(
       duration: Duration(seconds: 7),
-        vsync: this,
+      vsync: this,
     );
 
     opacity = Tween<double>(begin: 0.0, end: 1.0).animate(controller);
@@ -37,29 +39,29 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     Timer(const Duration(seconds: 9), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => OnboardingScreen(),
-        ),
+        MaterialPageRoute(builder: (context) => OnboardingScreen()),
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(AppColors.backgroundColor),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FadeTransition(
-              opacity: opacity,
-              child: Image.asset(
-                'assets/images/Logo.png',
-                width: 300.w,
-                height: 300.h,
+      body: BackgroundContainer(
+        widget: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FadeTransition(
+                opacity: opacity,
+                child: Image.asset(
+                  'assets/images/Logo.png',
+                  width: 300.w,
+                  height: 300.h,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
