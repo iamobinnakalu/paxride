@@ -48,6 +48,7 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
   final FontWeight? fontWeight;
   final Widget? icon;
+  final BorderSide? borderSide;
 
   const CustomButton({
     super.key,
@@ -55,11 +56,12 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.backgroundColor = const Color(AppColors.backgroundColor),
     this.textColor = const Color(AppColors.textColor1),
-    this.height = 54.0,
+    this.height = 57.0,
     this.width = 355.0,
     this.borderRadius = 30.0,
     this.fontWeight = FontWeight.w500,
     this.icon,
+    this.borderSide,
   });
 
   @override
@@ -73,6 +75,7 @@ class CustomButton extends StatelessWidget {
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
+            side: borderSide ?? BorderSide.none,
           ),
           elevation: 2,
         ),

@@ -7,6 +7,8 @@ class AppColors {
   static const textColor2 = 0xFF050505;
   static const textColor1 = 0xFFFCFEFE;
   static const btn1 = 0xFFFFBB1B;
+  static const verifyColorFill = 0xFFD9D9D9;
+  static const insideText = 0xFF6D6D6D;
 
   //ORANGE COLORS
   static const orangeColor50 = 0xFFFFFBEA;
