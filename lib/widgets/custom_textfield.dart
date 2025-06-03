@@ -10,6 +10,7 @@ class CustomTextfield extends StatelessWidget {
   final Function? onSuffixIconPressed;
   final FocusNode? focusNode;
   final Widget? icon;
+  final Color? fillColor;
 
   const CustomTextfield({
     super.key,
@@ -21,6 +22,7 @@ class CustomTextfield extends StatelessWidget {
     this.onSuffixIconPressed,
     this.focusNode,
     this.icon,
+    this.fillColor,
   });
 
   @override
@@ -33,6 +35,7 @@ class CustomTextfield extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: Color(AppColors.textColor1),
+          //fillColor: fillColor ?? Color(AppColors.textColor1),
           hintText: hintText,
           prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
           suffixIcon:

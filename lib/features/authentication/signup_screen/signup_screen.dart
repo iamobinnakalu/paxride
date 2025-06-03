@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:paxride/common/widgets/bg_container.dart';
 import 'package:paxride/constants/colors.dart';
+import 'package:paxride/features/authentication/email_verification/screen/email_verification_screen.dart';
 import 'package:paxride/widgets/custom_button.dart';
 import 'package:paxride/widgets/custom_textfield.dart';
+
+import '../signin_screen/signin_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -172,7 +175,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   text: 'Sign up',
                   width: MediaQuery.sizeOf(context).width,
                   textColor: Color(AppColors.textColor2),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EmailVerificationScreen(),
+                      ),
+                    );
+                  },
                   backgroundColor: Color(AppColors.btn1),
                 ),
                 SizedBox(height: 12),
@@ -181,7 +191,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   icon: SizedBox(
                     height: 21,
                     width: 21,
-                    child: Image.asset('assets/images/google_icon.png'),
+                    child: Image.asset('assets/icons/google_icon.png'),
                   ),
                   text: 'Sign up with Google',
                   textColor: Color(AppColors.textColor2),
@@ -191,7 +201,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(height: 12),
                 CustomButton(
                   width: MediaQuery.sizeOf(context).width,
-                  icon: Image.asset('assets/images/apple_icon.png'),
+                  icon: Image.asset('assets/icons/apple_icon.png'),
                   text: 'Sign up with Apple',
                   textColor: Color(AppColors.textColor2),
                   onPressed: () {},
@@ -210,7 +220,14 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(width: 1),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SigninScreen(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Login',
                         style: GoogleFonts.urbanist(
