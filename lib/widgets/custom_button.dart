@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants/colors.dart';
+import '../theme/colors.dart';
 
 // class CustomButton extends StatelessWidget {
 //   final String label;
@@ -54,8 +54,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = const Color(AppColors.backgroundColor),
-    this.textColor = const Color(AppColors.textColor1),
+    this.backgroundColor = AppColors.backgroundColor,
+    this.textColor = AppColors.textColor1,
     this.height = 57.0,
     this.width = 355.0,
     this.borderRadius = 30.0,

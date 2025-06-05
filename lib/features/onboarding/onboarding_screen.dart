@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:paxride/common/widgets/bg_container.dart';
 import 'package:paxride/features/authentication/signup_screen/signup_screen.dart';
 import 'package:paxride/widgets/custom_button.dart';
-import '../../constants/colors.dart';
+import '../../theme/colors.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -41,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: GoogleFonts.manrope(
                       fontSize: 24.sp,
                       fontWeight: FontWeight.w800,
-                      color: Color(AppColors.textColor1),
+                      color: AppColors.textColor1,
                     ),
                   ),
 
@@ -51,15 +51,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: GoogleFonts.urbanist(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w400,
-                      color: Color(AppColors.textColor1),
+                      color: AppColors.textColor1,
                     ),
                   ),
                   CustomButton(
                     text: 'Get Started',
                     width: MediaQuery.sizeOf(context).width,
                     fontWeight: FontWeight.w500,
-                    textColor: Color(AppColors.textColor2),
-                    backgroundColor: Color(AppColors.btn1),
+                    textColor: AppColors.textColor2,
+                    backgroundColor: AppColors.btn1,
                     onPressed: () {
                       // Navigate to the next screen or perform an action
                       Navigator.pushReplacement(
