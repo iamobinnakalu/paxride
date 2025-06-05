@@ -16,7 +16,14 @@ import { EmailModule } from './common/email/email.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
+      host: process.env.DB_HOST,
+      port: parseInt(process.env.DB_PORT || '5432', 10),
+     username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    ssl: {
+    rejectUnauthorized: false, // For hosted Postgres like Render or Supabase
+  },
       entities: [User],
       synchronize: true, // Turn off in production
     }),
