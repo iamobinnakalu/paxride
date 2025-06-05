@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:paxride/constants/colors.dart';
 
 class BackgroundContainer extends StatelessWidget {
   final Widget widget;
@@ -10,7 +9,7 @@ class BackgroundContainer extends StatelessWidget {
     return Container(
       width: MediaQuery.sizeOf(context).width,
       height: MediaQuery.sizeOf(context).height,
-      decoration: BoxDecoration(color: Color(AppColors.backgroundColor)),
+      decoration: BoxDecoration(color: ColorScheme.of(context).surface),
       child: widget,
     );
   }

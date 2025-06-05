@@ -6,7 +6,7 @@ import 'package:paxride/features/usertype/controller/usertype_controller.dart';
 import 'package:paxride/features/usertype/model/usertype_model.dart';
 import 'package:paxride/widgets/custom_button.dart';
 import 'package:paxride/widgets/custom_container.dart';
-import '../../../constants/colors.dart';
+import '../../../theme/colors.dart';
 import '../../authentication/verification/verification_successful_screen.dart';
 
 class UsertypeScreen extends StatefulWidget {
@@ -23,15 +23,15 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(AppColors.textColor1),
+        backgroundColor: AppColors.textColor1,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          color: Color(AppColors.textColor2),
+          color: AppColors.textColor2,
           onPressed: () => Navigator.pop(context),
         ),
       ),
       body: CustomContainer(
-        backgroundColor: Color(AppColors.textColor1),
+        backgroundColor: AppColors.textColor1,
         widget: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
@@ -43,7 +43,7 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                   style: GoogleFonts.manrope(
                     fontSize: 30.sp,
                     fontWeight: FontWeight.w800,
-                    color: Color(AppColors.textColor2),
+                    color: AppColors.textColor2,
                   ),
                 ),
                 SizedBox(height: 5.h),
@@ -52,7 +52,7 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                   style: GoogleFonts.urbanist(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w400,
-                    color: Color(AppColors.insideText),
+                    color: AppColors.insideText,
                   ),
                 ),
                 SizedBox(height: 10.h),
@@ -65,8 +65,11 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                     final isSelected = userType.isSelected;
 
                     final Color containerColor =
-                    isSelected ? Color(AppColors.textColor2) : Color(AppColors.btn1);
-                    final Color textColor = isSelected ? Color(AppColors.textColor1) : Color(AppColors.textColor2);
+                        isSelected ? AppColors.textColor2 : AppColors.btn1;
+                    final Color textColor =
+                        isSelected
+                            ? AppColors.textColor1
+                            : AppColors.textColor2;
 
                     return GestureDetector(
                       onTap: () {
@@ -100,14 +103,18 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 10.h,
+                                    ),
                                     child: Column(
                                       //mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           spacing: 100.w,
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               controller.userTypes[index].title,
@@ -123,16 +130,27 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                                                 value: isSelected,
                                                 onChanged: (_) {
                                                   setState(() {
-                                                    controller.toggleSelection(index);
+                                                    controller.toggleSelection(
+                                                      index,
+                                                    );
                                                   });
                                                 },
                                                 shape: RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.circular(10.r),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        10.r,
+                                                      ),
                                                 ),
-                                                fillColor: MaterialStateProperty.all(Color(AppColors.verifyColorFill)),
-                                                checkColor: isSelected
-                                                    ? Color(AppColors.textColor2) //check box mark when selected
-                                                    : Color(AppColors.verifyColorFill), //check box fill color when not selected
+                                                fillColor:
+                                                    MaterialStateProperty.all(
+                                                      AppColors.verifyColorFill,
+                                                    ),
+                                                checkColor:
+                                                    isSelected
+                                                        ? AppColors
+                                                            .textColor2 //check box mark when selected
+                                                        : AppColors
+                                                            .verifyColorFill, //check box fill color when not selected
                                                 side: BorderSide.none,
                                               ),
                                             ),
@@ -140,7 +158,9 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                                         ),
                                         SizedBox(height: 0.h),
                                         Text(
-                                          controller.userTypes[index].description,
+                                          controller
+                                              .userTypes[index]
+                                              .description,
                                           style: GoogleFonts.urbanist(
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w400,
@@ -163,15 +183,14 @@ class _UsertypeScreenState extends State<UsertypeScreen> {
                 CustomButton(
                   text: 'Continue to Dashboard',
                   fontWeight: FontWeight.w500,
-                  textColor: Color(AppColors.textColor1),
+                  textColor: AppColors.textColor1,
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()
-                      ),
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
                     );
                   },
-                  backgroundColor: Color(AppColors.textColor2),
+                  backgroundColor: AppColors.textColor2,
                   borderRadius: 10.r,
                   height: 57.h,
                   width: double.infinity,

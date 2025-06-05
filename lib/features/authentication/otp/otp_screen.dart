@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:paxride/features/authentication/verification/verification_successful_screen.dart';
 import 'package:paxride/widgets/custom_container.dart';
 import 'package:paxride/widgets/custom_textfield.dart';
-import '../../../constants/colors.dart';
+import '../../../theme/colors.dart';
 import '../../../widgets/custom_button.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -19,15 +19,15 @@ class _OTPScreenState extends State<OTPScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(AppColors.textColor1),
+        backgroundColor: AppColors.textColor1,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          color: Color(AppColors.textColor2),
+          color: AppColors.textColor2,
           onPressed: () => Navigator.pop(context),
         ),
       ),
       body: CustomContainer(
-        backgroundColor: Color(AppColors.textColor1),
+        backgroundColor: AppColors.textColor1,
         widget: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 60.h),
           child: Column(
@@ -60,7 +60,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     height: 57.h,
                     width: 55.w,
                     decoration: BoxDecoration(
-                      color: Color(AppColors.verifyColorFill),
+                      color:AppColors.verifyColorFill,
                       borderRadius: BorderRadius.circular(10.r),
                     ),
 
@@ -70,7 +70,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       style: GoogleFonts.urbanist(
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w700,
-                        color: Color(AppColors.textColor2),
+                        color:AppColors.textColor2,
                       ),
                     ),
                   );
@@ -80,13 +80,13 @@ class _OTPScreenState extends State<OTPScreen> {
               CustomButton(
                 text: 'Verify now',
                 fontWeight: FontWeight.w500,
-                textColor: Color(AppColors.textColor2),
+                textColor: AppColors.textColor2,
                 onPressed: () {
                   Navigator.push(
                     context,
                   MaterialPageRoute(builder: (context) => VerificationSuccessfulScreen()),                  );
                 },
-                backgroundColor: Color(AppColors.btn1),
+                backgroundColor:AppColors.btn1,
                 borderRadius: 10.r,
                 height: 57.h,
                 width: double.infinity,
@@ -95,13 +95,13 @@ class _OTPScreenState extends State<OTPScreen> {
               CustomButton(
                 text: 'Resend Code',
                 fontWeight: FontWeight.w500,
-                textColor: Color(AppColors.textColor2),
+                textColor: AppColors.textColor2,
                 onPressed: () {},
-                backgroundColor: Color(AppColors.textColor1),
+                backgroundColor: AppColors.textColor1,
                 borderRadius: 10.r,
                 height: 57.h,
                 width: double.infinity,
-                borderSide: BorderSide(color: Color(AppColors.textColor2)),
+                borderSide: BorderSide(color:AppColors.textColor2),
               ),
             ],
           ),

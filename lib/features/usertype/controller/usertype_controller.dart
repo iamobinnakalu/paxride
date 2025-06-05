@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:paxride/constants/colors.dart';
+import 'package:paxride/theme/colors.dart';
 import 'package:paxride/features/usertype/model/usertype_model.dart';
 
 class UserTypeController {
