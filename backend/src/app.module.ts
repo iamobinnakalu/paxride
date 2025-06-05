@@ -17,9 +17,6 @@ import { EmailModule } from './common/email/email.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false, // Required by Supabase
-      },
       entities: [User],
       synchronize: true, // Turn off in production
     }),
