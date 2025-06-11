@@ -21,9 +21,7 @@ import { EmailModule } from './common/email/email.module';
      username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    ssl: {
-    rejectUnauthorized: false, // For hosted Postgres like Render or Supabase
-  },
+    ssl: { rejectUnauthorized: false },
       entities: [User],
       synchronize: true, // Turn off in production
     }),
