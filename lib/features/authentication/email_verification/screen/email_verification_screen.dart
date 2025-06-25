@@ -65,6 +65,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 ),
                 SizedBox(height: 0.h),
                 CustomTextField(
+                  filledColor: AppColors.verifyColorFill,
                   controller: email,
                   hintText: "",
                   labelText: "Email address",

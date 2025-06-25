@@ -9,6 +9,7 @@ import 'package:paxride/widgets/custom_button.dart';
 import 'package:paxride/widgets/custom_textfield.dart';
 import 'package:provider/provider.dart';
 
+import '../../../theme/typeface.dart';
 import '../signin_screen/signin_screen.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -69,17 +70,20 @@ class _SignupScreenState extends State<SignupScreen> {
                           fontWeight: FontWeight.w400,
                           color: AppColors.textColor1,
                         ),
+                        // style: Typeface.base.copyWith(
+                        //   fontFamily:
+                        // ),
                       ),
-                      SizedBox(height: 11),
+                      SizedBox(height: 11.h),
                       Text(
                         'Email address',
                         style: GoogleFonts.urbanist(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textColor1,
                         ),
                       ),
-                      SizedBox(height: 6),
+                      SizedBox(height: 6.h),
                       CustomTextField(
                         controller: email,
                         hintText: "",
@@ -96,16 +100,16 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                       ),
 
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       Text(
                         'Password',
                         style: GoogleFonts.urbanist(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textColor1,
                         ),
                       ),
-                      SizedBox(height: 6),
+                      SizedBox(height: 6.h),
 
                       CustomTextField(
                         controller: password,
@@ -131,16 +135,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                     ? "Password must be at least 6 characters"
                                     : null,
                       ),
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       Text(
                         'Confirm password',
                         style: GoogleFonts.urbanist(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textColor1,
                         ),
                       ),
-                      SizedBox(height: 6),
+                      SizedBox(height: 6.h),
                       CustomTextField(
                         controller: confirmPassword,
                         labelText: "Password",
@@ -165,7 +169,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                     ? "Password must be at least 6 characters"
                                     : null,
                       ),
-                      SizedBox(height: 14),
+                      SizedBox(height: 14.h),
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.start,
                         // crossAxisAlignment: CrossAxisAlignment.center,
@@ -211,7 +215,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   );
                                 }),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4),
+                                  borderRadius: BorderRadius.circular(4.r),
                                 ),
                               ),
                             ),
@@ -242,7 +246,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 27),
+                      SizedBox(height: 27.h),
                       CustomButton(
                         text: 'Sign up',
                         width: MediaQuery.sizeOf(context).width,
@@ -260,27 +264,28 @@ class _SignupScreenState extends State<SignupScreen> {
                             //   password.text,
                             // );
 
-                            Navigator.pop(context);
+                            //Navigator.pop(context);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => const EmailVerificationScreen(),
+                              ),
+                            );
                           } else {
                             print('Form is not valid');
                           }
 
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder:
-                          //         (context) => const EmailVerificationScreen(),
-                          //   ),
-                          // );
+
                         },
                         backgroundColor: AppColors.btn1,
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                       CustomButton(
                         width: MediaQuery.sizeOf(context).width,
                         icon: SizedBox(
-                          height: 21,
-                          width: 21,
+                          height: 21.h,
+                          width: 21.w,
                           child: Image.asset('assets/icons/google_icon.png'),
                         ),
                         text: 'Sign up with Google',
@@ -288,7 +293,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         onPressed: () {},
                         backgroundColor: AppColors.textColor1,
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                       CustomButton(
                         width: MediaQuery.sizeOf(context).width,
                         icon: Image.asset('assets/icons/apple_icon.png'),
@@ -297,7 +302,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         onPressed: () {},
                         backgroundColor: AppColors.textColor1,
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 40.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -308,7 +313,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               color: AppColors.textColor1,
                             ),
                           ),
-                          SizedBox(width: 1),
+                          SizedBox(width: 1.w),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
