@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.15.29"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.2",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.2",
+    "@nestjs/typeorm": "^11.0.0"
+  }
+}
